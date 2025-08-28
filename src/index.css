@@ -1,0 +1,89 @@
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌙 Global Styles */
+body {
+  @apply text-gray-900;
+  font-family: 'Inter', sans-serif;
+  background-color: #d29489; /* Match Hero background so no violet shows */
+}
+
+/* 🌟 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 🌟 Animation Utilities */
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.5s ease-in-out;
+}
+
+/* 🌟 Button Hover Effect */
+.btn-animated {
+  @apply transition-transform duration-300 ease-in-out;
+}
+.btn-animated:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+/* 🌟 Input Focus Animation */
+.input-animated {
+  @apply transition-all duration-300 ease-in-out;
+}
+.input-animated:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+/* 🌟 Cursor Trail (Optional - updated to match Hero background) */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: #d29489; /* changed from violet to Hero pink */
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+  z-index: 50;
+}

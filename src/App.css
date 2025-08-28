@@ -1,0 +1,9 @@
+ html {
+  scroll-behavior: smooth;
+}
+.bg-orange-100 {
+  background-color: #ffe5d4;
+}
+.bg-orange-50 {
+  background-color: #fff3e0;
+}
